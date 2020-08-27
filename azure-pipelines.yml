@@ -1,0 +1,47 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+variables:
+  imageName: 'aqua-alpine'
+
+steps:
+- task: Docker@2
+  displayName: Build an image
+  inputs:
+    repository: $(imageName)
+    command: build
+    Dockerfile: app/Dockerfile
+- task: Docker@2
+  inputs:
+    containerRegistry: 'registry.aquasec.com'
+    command: 'login'
+    addPipelineData: false
+- task: aquasecScanner@4
+  inputs:
+    image: '$(imageName):$(Build.BuildId)'
+    scanner: 'registry.aquasec.com/scanner:5.0'
+    scanType: 'local'
+    register: true
+    hideBase: false
+    showNegligible: false
+    registry: 'ACR'
+    connection: 'Aqua-Console'
+    caCertificates: true
+    registerCompliant: true
+    scanMalware: true
+### Alaska Airlines Configuration
+#- task: aquasecScanner@4
+#  displayName: 'Scanning Docker Container Image'
+#  inputs:
+#    image: '$(SetImageVars.ImageTrusted)'
+#    connection: 'aqua-console-$(System.TeamProject)'
+#    caCertificates: true
+#    scanType: local
+#    registry: 'aagacr.azurecr.io'
+#    scanMalware: true
+#    register: true
+#    registerCompliant: true
+#    scanner: '$(AquaScanImage)'
