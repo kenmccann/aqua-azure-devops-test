@@ -32,6 +32,7 @@ steps:
     caCertificates: true
     registerCompliant: true
     scanMalware: true
+    runOptions: '-e SCALOCK_LOG_LEVEL=DEBUG'
 ### Alaska Airlines Configuration
 #- task: aquasecScanner@4
 #  displayName: 'Scanning Docker Container Image'
