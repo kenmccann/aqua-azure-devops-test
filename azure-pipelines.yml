@@ -31,6 +31,7 @@ steps:
     connection: 'Aqua-Kubernetes-Lab'
     caCertificates: true
     registerCompliant: true
+    register: true
     scanMalware: true
     runOptions: '-e SCALOCK_LOG_LEVEL=DEBUG'
 ### Alaska Airlines Configuration
