@@ -22,7 +22,7 @@ steps:
 - task: aquasecScanner@4
   inputs:
     image: '$(imageName):$(Build.BuildId)'
-    scanner: 'registry.aquasec.com/scanner:4.6.20156'
+    scanner: 'registry.aquasec.com/scanner:4.6'
     scanType: 'local'
     register: true
     hideBase: false
