@@ -28,7 +28,7 @@ steps:
     hideBase: false
     showNegligible: false
     registry: 'ACR'
-    connection: 'Aqua-Console'
+    connection: 'Aqua-Kubernetes-Environment'
     caCertificates: true
     registerCompliant: true
     scanMalware: true
