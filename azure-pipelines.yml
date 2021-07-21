@@ -27,7 +27,7 @@ steps:
     register: true
     hideBase: false
     showNegligible: false
-    registry: 'ACR'
+    registry: 'aquaken'
     connection: 'Aqua-Console'
     caCertificates: true
 #    registerCompliant: true
