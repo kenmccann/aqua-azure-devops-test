@@ -28,11 +28,11 @@ steps:
 #    image: '$(imageName):$(Build.BuildId)'
     image: 'slightlytyler/large-image-test:latest'
     scanner: 'registry.aquasec.com/scanner:5.3'
-    scanType: 'local'
-    register: true
+#    scanType: 'local'
+#    register: true
     hideBase: false
     showNegligible: false
-    registry: 'Docker Hub'
+#    registry: 'Docker Hub'
     connection: 'Aqua-Console'
     caCertificates: true
 #    registerCompliant: true
