@@ -19,6 +19,10 @@ steps:
     containerRegistry: 'registry.aquasec.com'
     command: 'login'
     addPipelineData: false
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker-hub'
+    command: 'login'
 - task: aquasecScanner@4
   inputs:
 #    image: '$(imageName):$(Build.BuildId)'
