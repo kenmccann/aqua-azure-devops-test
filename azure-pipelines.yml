@@ -28,7 +28,7 @@ steps:
     register: true
     hideBase: false
     showNegligible: false
-    registry: 'aquaken'
+    registry: 'Docker Hub'
     connection: 'Aqua-Console'
     caCertificates: true
 #    registerCompliant: true
