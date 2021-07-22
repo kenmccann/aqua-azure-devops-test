@@ -21,7 +21,8 @@ steps:
     addPipelineData: false
 - task: aquasecScanner@4
   inputs:
-    image: '$(imageName):$(Build.BuildId)'
+#    image: '$(imageName):$(Build.BuildId)'
+    image: 'slightlytyler/large-image-test:latest'
     scanner: 'registry.aquasec.com/scanner:5.3'
     scanType: 'local'
     register: true
